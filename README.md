@@ -1,0 +1,2 @@
+# keloud-ArchLinux_InstallScript
+ArchLinuxを簡単に簡潔にVMwareにインストールすることを目指したスクリプト
