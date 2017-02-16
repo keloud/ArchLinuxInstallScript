@@ -1,7 +1,7 @@
-loadkeys jp106
+#loadkeys jp106
 
-##ArchLinux Install
-##You download Raw directly.
-wget -O Install.sh https://github.com/keloud/MyLinuxScripts/blob/master/ArchLinux_Install/ArchLinux_Install_Core.sh
-chmod 7 Install.sh
-./Install.sh
+##ArchLinux Install##
+##You download Raw directly.##
+#wget -O Install.sh https://github.com/keloud/MyLinuxScripts/blob/master/ArchLinux_Install/ArchLinux_Install_Core.sh
+#chmod 7 Install.sh
+#./Install.sh
