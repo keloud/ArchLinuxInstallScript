@@ -15,7 +15,7 @@ locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 export LANG=en_US.UTF-8
 echo KEYMAP=jp106 > /etc/vconsole.conf
-ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localetime
 hwclock -u -w
 
 ##HostName Set
@@ -33,7 +33,7 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ArchLinux
 grub-mkconfig -o /boot/grub/grub.cfg
 
 ##NetworkManager
-pacman -S --noconfirm networkmanager network-manaer-applet 
+pacman -S --noconfirm networkmanager network-manager-applet
 systemctl enable NetworkManager.service
 
 ##Add User
