@@ -1,38 +1,48 @@
-!#bin/sh
-
+#!/usr/bin/env bash
 loadkeys jp106
 
-gdisk /dev/sda <<EOS
-o
-Y
+##Setup Partition
+fdsik /dev/sda <<EOS
+g
+n
+1
+
++512M
+t
+1
+n
+2
+
++4G
+t
+2
+19
 n
 
 
-+512MB
-ef00
-n
 
-
-
-
-W
-Y
+w
 EOS
-mkfs.ext4 /dev/sda2
-mount /dev/sda2 /mnt
-mkdir /mnt/boot
+
 mkfs.vfat -F32 /dev/sda1
+mkswap /dev/sda2
+mkfs.ext4 /dev/sda3
+mount /dev/sda3 /mnt
+mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
+swapon dev/sda2
 
 ##Setup Time
 timedatectl set-ntp true
 
 #mirrorlist
-grep -i jp /etc/pacman.d/mirrorlist > mirrorlist
+grep -i ac.jp /etc/pacman.d/mirrorlist > mirrorlist
+grep -i ad.jp /etc/pacman.d/mirrorlist >> mirrorlist
 cat /etc/pacman.d/mirrorlist >> mirrorlist
 cp mirrorlist /etc/pacman.d/mirrorlist
 
 ##Core Install
+pacman -Syu --noconfirm
 pacstrap /mnt base base-devel
 genfstab -U -p /mnt >> /mnt/etc/fstab
 
