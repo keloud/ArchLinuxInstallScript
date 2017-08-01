@@ -12,9 +12,9 @@ read -s USERPASSWD
 sed -i -e 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen
 sed -i -e 's/#ja_JP.UTF-8 UTF-8/ja_JP.UTF-8 UTF-8/g' /etc/locale.gen
 locale-gen
-echo LANG=en_US.UTF-8 >> /etc/locale.conf
+echo LANG=en_US.UTF-8 > /etc/locale.conf
 export LANG=en_US.UTF-8
-echo KEYMAP=jp106 >> /etc/vconsole.conf
+echo KEYMAP=jp106 > /etc/vconsole.conf
 ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 hwclock -u -w
 
@@ -25,10 +25,10 @@ echo $HNAME > /etc/hostname
 echo "root:"$ROOTPASSWD | chpasswd
 
 ##pacman update
-pacman -Syu
+pacman -Syu --noconfirm
 
 ##grub setup
-pacman -S --noconfirm grub dosfstools efibootmgr
+pacman -S --noconfirm grub efibootmgr
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ArchLinux --recheck --debug
 grub-mkconfig -o /boot/grub/grub.cfg
 
