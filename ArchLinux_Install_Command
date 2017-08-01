@@ -2,6 +2,6 @@
 
 ##ArchLinux Install##
 ##You download Raw directly.##
-#wget -O Install.sh https://github.com/keloud/MyLinuxScripts/blob/master/ArchLinux_Install/ArchLinux_Install_Core.sh
+#wget -O Install.sh https://raw.githubusercontent.com/keloud/ArchLinux_InstallScript/master/ArchLinux_Install_Core.sh
 #chmod 7 Install.sh
 #./Install.sh
