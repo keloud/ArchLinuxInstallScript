@@ -1,2 +1,6 @@
-# keloud-ArchLinux_InstallScript
+# ArchLinux_InstallScript
 ArchLinuxを簡単に簡潔にVMwareにインストールすることを目指したスクリプト
+
+64GB用です
+
+SWAPパーティションが作成されます
